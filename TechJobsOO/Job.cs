@@ -43,12 +43,27 @@ namespace TechJobsOO
 
         public override string ToString()
         {
-            //check val not empty or null return temp lit.
-            return Name;
+            if (string.IsNullOrEmpty(Name))
+            {
+                Name = "Data Not Available";
+            }
+            if (string.IsNullOrEmpty(EmployerName.Value))
+            {
+               EmployerName.Value = "Data Not Available";
+            }
+            if (string.IsNullOrEmpty(EmployerLocation.Value))
+            {
+                EmployerLocation.Value = "Data Not Available";
+            }
+            if (string.IsNullOrEmpty(JobType.Value))
+            {
+                JobType.Value = "Data Not Available";
+            }
+            if (string.IsNullOrEmpty(JobCoreCompetency.Value))
+            {
+                JobCoreCompetency.Value = "Data Not Available";
+            }
+            return $"\nID: {Id}\n Name: {Name}\n Employer: {EmployerName.Value}\n Location: {EmployerLocation.Value}\n Position Type: {JobType.Value}\n Core Competency: {JobCoreCompetency.Value}\n";
         }
-
-        // TODO: Add the two necessary constructors.
-
-        // TODO: Generate Equals() and GetHashCode() methods.
     }
 }
